@@ -1,0 +1,31 @@
+{
+	"build": {
+		"jsFile": "PROFILE.js",
+		"cssFile": "PROFILE.css",
+		"version": "",
+		"defaultLocaleList": [ "en_EN" ]
+	},
+	"profiles": [
+		{
+			"name": "wink-1.4.0",
+			"modules": [
+				"core", "winkcomponents"
+			],
+			"css": [
+				"_themes/wink.css",
+				"_themes/default/css/wink.default.css",
+				"_themes/default/css/wink.default.buttons.css",
+				"_themes/default/css/wink.default.icons.css"
+			]
+		},
+		{
+			"name": "components",
+			"modules": [
+				"components"
+			],
+			"css": [
+
+			]
+		}
+	]
+}

@@ -1,0 +1,112 @@
+/*--------------------------------------------------------
+ * Copyright (c) 2011, The Dojo Foundation
+ * This software is distributed under the "Simplified BSD license",
+ * the text of which is available at http://www.winktoolkit.org/licence.txt
+ * or see the "license.txt" file for more details.
+ *--------------------------------------------------------*/
+ 
+.splash {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-box-align: stretch;
+	z-index: 1;
+}
+
+.splash > * {
+	-webkit-box-flex: 0;
+}
+
+.splash_h {
+	padding: 67px 0 0 83px;
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+}
+.splash_h div {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-box-pack: end;
+}
+
+.splash_h div img {
+	display: block;
+}
+
+.splash_c {
+	-webkit-box-flex: 1;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-box-align: center;
+	-webkit-box-pack: center;
+}
+
+.splash_f {
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+}
+
+.splash_f > * {
+	-webkit-box-flex: 0;
+}
+
+.splash_fl {
+	-webkit-box-flex: 1;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-box-align: center;
+	-webkit-box-pack: center;
+	
+	text-align: center;
+	font-size: 1.2em;
+}
+
+.splash_fr {
+	-webkit-box-flex: 1;
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+	-webkit-transform: rotate(180deg);
+	margin-right: 30px;
+}
+
+.splash_bar {
+	-webkit-box-flex: 0;
+	background-color: #8ec1da;
+	width: 29px;
+	margin-right: 23px;
+}
+
+#bird_splash {
+	position: absolute;
+	top: 100px;
+	left: 285px;
+}
+
+#spin_enter {
+	position: relative;
+	height: 38px;
+}
+
+#splash_spin {
+	position: absolute;
+	top: 7px;
+	left: -17px;
+	width: 100%;
+}
+
+#enter_btn {
+	background-color: #8ec1da;
+	height: 38px;
+	width: 94px;
+	line-height: 38px;
+}
+
+#webapp_desc {
+	margin-top: 40px;
+	margin-left: -39px;
+	font-family: 'Cabin Sketch';
+	font-size: 1.3em;
+}
+
+#webapp_desc a {
+	text-decoration: none;
+	color: inherit;
+}

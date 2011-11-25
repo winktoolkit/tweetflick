@@ -1,0 +1,151 @@
+/*--------------------------------------------------------
+ * Copyright (c) 2011, The Dojo Foundation
+ * This software is distributed under the "Simplified BSD license",
+ * the text of which is available at http://www.winktoolkit.org/licence.txt
+ * or see the "license.txt" file for more details.
+ *--------------------------------------------------------*/
+ 
+.trends_c {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-box-align: stretch;
+	height: 100%;
+	width: 100%;
+}
+
+.trends_c > * {
+	-webkit-box-flex: 0;
+}
+.trends_c .trends_square {
+	-webkit-box-flex: 1;
+}
+
+#trends_header, #trends_footer {
+	padding: 1%;
+}
+
+#trends_header {
+	display: -webkit-box;
+	-webkit-box-pack: end;
+	margin-bottom: 3%;
+}
+
+#trends_footer {
+	background-color: #8ec1da;
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+	height: 74px;
+}
+
+.trends_square {
+	-webkit-box-flex: 1;
+	
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-box-align: stretch;
+}
+
+.trends_square .trends_line {
+	-webkit-box-flex: 1;
+	
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+	-webkit-box-align: strech;
+}
+
+.trends_line .trends_square_box {
+	-webkit-box-flex: 1;
+	
+	display: -webkit-box;
+	-webkit-box-pack: center;
+}
+
+.box_child {
+	position: relative;
+}
+
+.box_child.tags {
+	overflow: hidden;
+}
+
+.tags .geo_time {
+	color: #f8188f;
+	font-size: 1.1em;
+}
+
+.tags .geo_time .geo, .tags .geo_time .time {
+	position: absolute;
+	z-index: 3;
+	height: 25px;
+	width: 87px;
+	
+	overflow: hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+
+#view_trends
+{
+	background: url(../images/background.png) top right no-repeat;	
+}
+
+#tag_c_1 {
+	top: 0px;
+	left: 0px;
+}
+
+#tag_c_2 {
+	top: 140px;
+	right: 0px;
+}
+
+#tag_c_3 {
+	top: -10px;
+	left: -50px;
+}
+
+#conf_c {
+	top: 0px;
+	left: 0px;
+}
+
+.bg_desc {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	-webkit-background-size: 100% 100%;
+}
+
+.bg_content {
+	background-color: #8EC1DA;
+	position: absolute;
+	padding: 5%;
+	margin: 8%;
+	
+	height: 74%;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-box-align: stretch;
+}
+
+.conf_text {
+	font-size: 1.3em;
+	-webkit-box-flex: 0;
+}
+
+.conf_actions {
+	font-size: 1.1em;
+	-webkit-box-flex: 1;
+	width: 100%;
+	
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-box-align: center;
+	-webkit-box-pack: center;
+}
+
+#conf_btn
+{
+	height: 38px;
+	line-height: 38px;	
+}

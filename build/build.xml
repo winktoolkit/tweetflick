@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="project_build_system" default="build_all" basedir=".">
+	<description>PROJECT BUILD SYSTEM</description>
+	
+	<!--================================
+			LOADING PROPERTIES
+		================================-->
+	<available file="./build.properties" property="property.file.found" />
+	<fail unless="property.file.found" message="No build.properties file found. Build aborted." />
+
+	<property file="./build.properties" />
+	
+	<!--================================
+			BUILD ALL
+		================================-->
+	<target name="build_all" description="build wink js and css">
+		<echo message="BUILD ${tf.project.name}" level="info" />
+		
+		<delete dir="${tf.install.dir}" />
+		<delete dir="${tf.delivery.dir}" />
+		
+		<!-- adapt conf files -->
+		<copy file="modules.json" tofile="${build.conf.modules}" />
+		<copy file="profiles.json" tofile="${build.conf.profiles}" />
+		
+		<replaceregexp 
+			file="${build.conf.modules}" 
+			byline="true" 
+			flags="g" 
+			match="PROJECT_RELATIVE_PATH" 
+			replace="${tf.project.relativedir}" />
+			
+		<replaceregexp 
+			file="${build.conf.modules}" 
+			byline="true" 
+			flags="g" 
+			match="PROJECT_RELATIVE_PATH" 
+			replace="${tf.project.relativedir}" />
+		
+		<!-- create install tree -->
+		<copy todir="${tf.install.dir}">
+			<fileset dir="${tf.project.dir}" includes="*.html" />
+		</copy>
+		<copy todir="${tf.install.dir}/images">
+			<fileset dir="${tf.project.dir}/images" />
+		</copy>
+		<copy todir="${tf.install.dir}/server">
+			<fileset dir="${tf.project.dir}/server">
+				<exclude name="*.php"/>
+			</fileset>
+		</copy>
+		<mkdir dir="${tf.install.dir}/js" />
+		<mkdir dir="${tf.install.dir}/css" />
+		
+		<!-- launch wink build -->
+		<ant dir="${tf.winkbuilddir}" antfile="build.xml" inheritAll="true"></ant>
+		
+		<!-- adapt html references -->
+		<replaceregexp 
+			file="${tf.install.dir}/index.html" 
+			byline="false" 
+			flags="s" 
+			match="(&lt;!-- CSS WINK BEGIN --&gt;).*(&lt;!-- CSS WINK END --&gt;)" 
+			replace='&lt;link rel="stylesheet" href="css/${tf.wink.description}.min.css" type="text/css"&gt;' />
+			
+		<replaceregexp 
+			file="${tf.install.dir}/index.html" 
+			byline="false" 
+			flags="s" 
+			match="(&lt;!-- CSS COMPONENTS BEGIN --&gt;).*(&lt;!-- CSS COMPONENTS END --&gt;)" 
+			replace='&lt;link rel="stylesheet" href="css/components.min.css" type="text/css"&gt;' />
+	
+		<replaceregexp 
+			file="${tf.install.dir}/index.html" 
+			byline="false" 
+			flags="s" 
+			match="(&lt;!-- JS WINK BEGIN --&gt;).*(&lt;!-- JS WINK END --&gt;)" 
+			replace='&lt;script type="text/javascript" src="js/${tf.wink.description}.min.js"&gt;&lt;/script&gt;' />
+			
+		<replaceregexp 
+			file="${tf.install.dir}/index.html" 
+			byline="false" 
+			flags="s" 
+			match="(&lt;!-- JS COMPONENTS BEGIN --&gt;).*(&lt;!-- JS COMPONENTS END --&gt;)" 
+			replace='&lt;script type="text/javascript" src="js/components.min.js"&gt;&lt;/script&gt;' />
+		
+		<!-- create package -->
+		<mkdir dir="${tf.delivery.dir}" />
+		<tar destfile="${tf.delivery.file}.tar" basedir="${tf.install.dir}" />
+		<gzip destfile="${tf.delivery.file}.tar.gz" src="${tf.delivery.file}.tar" />
+		<delete file="${tf.delivery.file}.tar" />
+		
+		<delete file="${build.conf.modules}" />
+		<delete file="${build.conf.profiles}" />
+	</target>
+</project>

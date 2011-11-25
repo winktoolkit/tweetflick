@@ -1,0 +1,123 @@
+/*--------------------------------------------------------
+ * Copyright (c) 2011, The Dojo Foundation
+ * This software is distributed under the "Simplified BSD license",
+ * the text of which is available at http://www.winktoolkit.org/licence.txt
+ * or see the "license.txt" file for more details.
+ *--------------------------------------------------------*/
+ 
+body {
+	background-color: #c0deed;
+	color: #fff;
+	font-family: 'Cabin';
+	font-size: 100%;
+}
+
+select {
+	background-color: #f8188f;
+	color: #fff;
+	height: 25px;
+	width: 110px;
+	border: 1px solid #0062dc;
+	-webkit-border-radius: 0;
+}
+
+.splash, .main {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+
+.splash {
+	z-index: 1;
+}
+
+.main {
+	z-index: 0;
+}
+
+.view {
+	height: 100%;
+	width: 100%; 
+}
+
+.button {
+	background-color: #c0deed;
+	color: #f8188f;
+	-webkit-border-radius: 5px;
+	text-align: center;
+	padding: 2px 8px;
+}
+
+.title {
+	font-family: 'Cabin Sketch';
+	font-size: 4.2em;
+}
+.title.little {
+	font-size: 2.8em;
+	margin-right: 10px;
+}
+.title .tt {
+
+}
+.title .ta {
+	color: #8ec1da;
+}
+.title .tf {
+
+}
+
+.landscape {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-box-align: stretch;
+	height: 100%;
+	width: 100%;
+	
+	background-color: #c0deed;
+
+	position: absolute;
+	z-index: 20;
+}
+
+.landscape > * {
+	-webkit-box-flex: 1;
+}
+
+.landscape.hidden {
+	display: none;
+}
+
+.landscape .title {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-box-align: center;
+	-webkit-box-pack: center;
+}
+
+.landscape .landscape_text {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-box-align: center;
+	-webkit-box-pack: start;
+	text-align: center;
+}
+
+.toggle {
+	margin: 10px 10px 0 0; 
+}
+			
+.to_toggle .to_toggle_btn {
+	background: none;
+	background-color: #0062dc;
+	-webkit-border-radius: 4px;
+}
+						
+.to_toggle.onoff1 {
+	background: transparent url(../images/toggle.png) no-repeat center;
+	border: 2px solid #f8188f;
+	-webkit-border-radius: 5px;
+}
+
+.cp_colorpicker {
+	z-index: 12;
+}

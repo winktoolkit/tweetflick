@@ -1,0 +1,273 @@
+{
+	"modules": [
+		{
+		    "name": "core",
+		    "modules": [ 
+		        "amd",
+		        "kernel",
+		        "base",
+		        "dom",
+		        "error",
+		        "json",
+		        "topics",
+		        "ua",
+		        "feature",
+		        "2dfx",
+		        "math_basics",
+		        "event",
+		        "touch",
+		        "xhr",
+		        "layer"
+		    ]
+		},
+		{
+		    "name": "feature",
+		    "modules": [ 
+		        "feat",
+		        "featjson",
+		        "featcss",
+		        "featevent",
+		        "featdom"
+		    ]
+		},
+		{
+		    "name": "winkcomponents",
+		    "modules": [
+		        "jsonextended",
+		        "window",
+		        "geometric",
+		        "matrix",
+		        "3dfx",
+		        "cspinner",
+		        "movementtracker",
+		        "inertia",
+		        "scroller",
+		        "tagcloud",
+				"togglebutton",
+				"slidingpanels",
+				"colorpicker"
+		    ]
+		},
+		{
+		    "name": "components",
+		    "modules": [ 
+		        "main",
+				"visualfeedback",
+				"localstorage",
+				"twitterapi",
+				"flickrapi",
+				"geonamesapi",
+		        "splash",
+		        "trends",
+		        "updates",
+		        "confpanel"
+		    ]
+		},
+		
+		// core
+		{
+			"name": "amd",
+			"defaultImpl": "_amd/js/amd.js"
+		},
+		{
+			"name": "kernel",
+			"defaultImpl": "_base/_kernel/js/kernel.js"
+		},
+		{
+			"name": "base",
+			"defaultImpl": "_base/_base/js/base.js"
+		},
+		{
+			"name": "dom",
+			"defaultImpl": "_base/_dom/js/dom.js"
+		},
+		{
+			"name": "error",
+			"defaultImpl": "_base/error/js/error.js"
+		},
+		{
+			"name": "json",
+			"defaultImpl": "_base/json/js/json.js"
+		},
+		{
+			"name": "topics",
+			"defaultImpl": "_base/topics/js/topics.js"
+		},
+		{
+			"name": "ua",
+			"defaultImpl": "_base/ua/js/ua.js"
+		},
+		{
+			"name": "feat",
+			"defaultImpl": "_base/_feat/js/feat.js"
+		},
+		{
+			"name": "featapi",
+			"defaultImpl": "_base/_feat/js/feat_api.js"
+		},
+		{
+			"name": "featjson",
+			"defaultImpl": "_base/_feat/js/feat_json.js"
+		},
+		{
+			"name": "featcss",
+			"defaultImpl": "_base/_feat/js/feat_css.js"
+		},
+		{
+			"name": "featevent",
+			"defaultImpl": "_base/_feat/js/feat_event.js"
+		},
+		{
+			"name": "featgraphic",
+			"defaultImpl": "_base/_feat/js/feat_graphic.js"
+		},
+		{
+			"name": "featdom",
+			"defaultImpl": "_base/_feat/js/feat_dom.js"
+		},
+		{
+			"name": "2dfx",
+			"defaultImpl": "fx/_xy/js/2dfx.js"
+		},
+		{
+			"name": "math_basics",
+			"defaultImpl": "math/_basics/js/basics.js"
+		},
+		{
+			"name": "event",
+			"defaultImpl": "ux/event/js/event.js"
+		},
+		{
+			"name": "touch",
+			"defaultImpl": "ux/touch/js/touch.js"
+		},
+		{
+			"name": "xhr",
+			"defaultImpl": "net/xhr/js/xhr.js"
+		},
+		{
+			"name": "layer",
+			"defaultImpl": "ui/xy/layer/js/layer.js"
+		},
+		
+		// winkcomponents
+		{
+			"name": "jsonextended",
+			"defaultImpl": "_base/json/js/json.extended.js"
+		},
+		{
+			"name": "window",
+			"defaultImpl": "ux/window/js/window.js"
+		},
+		{
+			"name": "geometric",
+			"defaultImpl": "math/_geometric/js/geometric.js"
+		},
+		{
+			"name": "matrix",
+			"defaultImpl": "math/_matrix/js/matrix.js"
+		},
+		{
+			"name": "3dfx",
+			"defaultImpl": "fx/_xyz/js/3dfx.js"
+		},
+		{
+			"name": "cspinner",
+			"defaultImpl": "ui/xy/cspinner/js/cspinner.js"
+		},
+		{
+			"name": "movementtracker",
+			"defaultImpl": "ux/movementtracker/js/movementtracker.js"
+		},
+		{
+			"name": "inertia",
+			"defaultImpl": "ux/inertia/js/inertia.js"
+		},
+		{
+			"name": "scroller",
+			"defaultImpl": "ui/layout/scroller/js/scroller.js"
+		},
+		{
+			"name": "tagcloud",
+			"defaultImpl": "ui/xyz/tagcloud/js/tagcloud.js"
+		},
+		{
+			"name": "togglebutton",
+			"defaultImpl": "ui/xy/togglebutton/js/togglebutton.js",
+			"css": [
+			    "ui/xy/togglebutton/css/togglebutton.css"
+			]
+		},
+		{
+			"name": "slidingpanels",
+			"defaultImpl": "ui/layout/slidingpanels/js/slidingpanels.js",
+			"css": [
+			    "ui/layout/slidingpanels/css/slidingpanels.css"
+			]
+		},
+		{
+			"name": "colorpicker",
+			"defaultImpl": "ui/xy/colorpicker/js/colorpicker.js",
+			"css": [
+			    "ui/xy/colorpicker/css/colorpicker.css"
+			]
+		},
+		
+		// components
+		{
+			"name": "main",
+			"defaultImpl": "PROJECT_RELATIVE_PATH/js/main.js",
+			"css": [
+			    "PROJECT_RELATIVE_PATH/css/main.css"
+			]
+		},
+		{
+			"name": "visualfeedback",
+			"defaultImpl": "PROJECT_RELATIVE_PATH/js/visualfeedback.js"
+		},
+		{
+			"name": "localstorage",
+			"defaultImpl": "PROJECT_RELATIVE_PATH/js/localstorage.js"
+		},
+		{
+			"name": "twitterapi",
+			"defaultImpl": "PROJECT_RELATIVE_PATH/js/twitterapi.js"
+		},
+		{
+			"name": "flickrapi",
+			"defaultImpl": "PROJECT_RELATIVE_PATH/js/flickrapi.js"
+		},
+		{
+			"name": "geonamesapi",
+			"defaultImpl": "PROJECT_RELATIVE_PATH/js/geonamesapi.js"
+		},
+		{
+			"name": "splash",
+			"defaultImpl": "PROJECT_RELATIVE_PATH/js/splash.js",
+			"css": [
+			    "PROJECT_RELATIVE_PATH/css/splash.css"
+			]
+		},
+		{
+			"name": "trends",
+			"defaultImpl": "PROJECT_RELATIVE_PATH/js/trends.js",
+			"css": [
+			    "PROJECT_RELATIVE_PATH/css/trends.css"
+			]
+		},
+		{
+			"name": "updates",
+			"defaultImpl": "PROJECT_RELATIVE_PATH/js/updates.js",
+			"css": [
+			    "PROJECT_RELATIVE_PATH/css/updates.css"
+			]
+		},
+		{
+			"name": "confpanel",
+			"defaultImpl": "PROJECT_RELATIVE_PATH/js/confpanel.js",
+			"css": [
+			    "PROJECT_RELATIVE_PATH/css/confpanel.css"
+			]
+		}
+	]
+}

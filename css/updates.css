@@ -1,0 +1,195 @@
+/*--------------------------------------------------------
+ * Copyright (c) 2011, The Dojo Foundation
+ * This software is distributed under the "Simplified BSD license",
+ * the text of which is available at http://www.winktoolkit.org/licence.txt
+ * or see the "license.txt" file for more details.
+ *--------------------------------------------------------*/
+ 
+.updates_c {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-box-align: stretch;
+	height: 100%;
+	width: 100%;
+}
+.updates_c > * {
+	-webkit-box-flex: 0;
+}
+
+#updates_header {
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+	-webkit-box-align: stretch;
+	padding: 15px 15px 15px 0;
+}
+
+.trend {
+	-webkit-box-flex: 1;
+	line-height: 53px;
+	text-align: center;
+	font-size: 1em;
+}
+
+#header_title {
+	display: -webkit-box;
+	-webkit-box-pack: end;
+}
+
+.updates_c #content {
+	-webkit-box-flex: 1;
+	height: 100%;
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+	-webkit-box-align: stretch;
+}
+
+.content_panel {
+	-webkit-box-flex: 1;
+	
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+	width: 100%;
+}
+
+#updates_footer {
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+	-webkit-box-align: stretch;
+	padding: 1%;
+	background-color: #8ec1da;
+	height: 74px;
+}
+
+.content_c {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-box-align: stretch;
+}
+
+.content_c .wrapper {
+	-webkit-box-flex: 1;
+	
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	overflow: hidden;
+}
+
+.content_c .content {
+	position: relative;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+}
+
+.subheader_c, .subfooter_c  {
+	-webkit-box-flex: 0;
+	text-align: center;
+	background-color: #8ec1da;
+	
+	display: -webkit-box;
+	-webkit-box-align: center;
+	-webkit-box-pack: center;
+	height: 73px;
+}
+
+.subfooter_c  {
+	width: 41%;		
+}
+
+.subheader_c .flickr_t, .subheader_c .twitter_t, .subfooter_c .touch_t {
+	background-color: #c0deed;
+	font-size: 1.5em;
+	height: 48px;
+	line-height: 48px;
+	width: 246px;
+}
+
+.subheader_c .twitter_t, .subfooter_c .touch_t {
+	width: 	371px;
+}
+
+#get_updates_btn {
+	background-image: url(../images/fingerprint.png);
+	background-position: top right;
+	background-repeat: no-repeat;
+	font-size: 1.1em;
+	line-height: 23px;
+	width: 236px;
+	padding-left: 10px;
+	text-align: left;
+}
+
+#back_btn {
+	width: 36px;
+	height: 53px;
+	background-color: #8ec1da;
+	
+	display: -webkit-box;
+	-webkit-box-align: center;
+	-webkit-box-pack: center;
+}
+
+#back_btn .chevrons {
+	
+}
+
+.updates_actions {
+
+}
+
+#flickr_c {
+	width: 41%;
+}
+
+#twitter_c {
+	width: 59%;
+}
+
+#flickr_c .wrapper {
+	border-right: 2px solid #f8188f;
+}
+
+.flickr_item {
+	height: 61px;
+	width: 61px;
+	margin: 32px 0 0 32px;
+	display: -webkit-inline-box;
+}
+
+.flickr_item img {
+	width: 100%;
+	height: 100%;
+}
+
+.twitter_item {
+	border: 1px solid #fff;
+	margin: 32px 32px 0 32px;
+	padding: 5px;
+	
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+	-webkit-box-align: stretch;
+}
+
+.twitter_item .photo {
+	margin: 8px;
+	-webkit-box-flex: 0;
+}
+
+.twitter_item .photo img {
+	width: 48px;
+	height: 48px;
+}
+
+.twitter_item .user_text {
+	-webkit-box-flex: 1;
+	margin-left: 5px;
+}
+
+.twitter_item .user {
+	font-weight: bold;
+}
+
+.twitter_item .text {
+	
+}

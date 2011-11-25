@@ -1,0 +1,96 @@
+/*--------------------------------------------------------
+ * Copyright (c) 2011, The Dojo Foundation
+ * This software is distributed under the "Simplified BSD license",
+ * the text of which is available at http://www.winktoolkit.org/licence.txt
+ * or see the "license.txt" file for more details.
+ *--------------------------------------------------------*/
+ 
+.cfp {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-box-align: stretch;
+	
+	height: 80%;
+	width: 80%;
+	position: absolute;
+	top: 10%;
+	left: 10%;
+	z-index: 10;
+	
+	-webkit-border-radius: 10px;
+	background-color: #8ec1da;
+	
+	padding: 2%;
+}
+.cfp.hidden {
+	visibility: hidden;	
+}
+
+.cfp_line {
+	-webkit-box-flex: 0;
+	margin-bottom: 20px;
+}
+#cfp_actions {
+	-webkit-box-flex: 1;
+	margin-bottom: 0px;
+}
+
+.cfp_section {
+	font-size: 1.5em;
+	width: 80%;
+	border-bottom: 2px solid #f8188f;
+	margin-bottom: 5px;
+}
+.cfp_section.main_section {
+	font-size: 1.8em;
+	width: 100%;
+}
+
+.cfp_cities_select, .cfp_colors_select, .cfp_actions_btns {
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+	-webkit-box-align: stretch;
+}
+
+.cfp_select {
+	margin: 5px;
+}
+
+.cfp_color {
+	width: 50px;
+	height: 50px;
+	background-color: #fff;
+	margin: 5px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: #fff;
+}
+
+.cfp_tagcloud_text {
+	width: 50%;	
+}
+
+.cfp_tagcloud_select {
+	margin: 18px 0px;
+}
+
+#cfp_actions {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-box-align: end;
+	-webkit-box-pack: end;
+}
+
+.cfp_btn {
+	margin-left: 5px;
+	height: 38px;
+	line-height: 38px;
+	width: 123px;
+}
+
+.reset_actions {
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+	-webkit-box-align: left;
+}
+
