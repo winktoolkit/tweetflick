@@ -243,7 +243,7 @@ tf.updates = (function() {
 			color: _color,
 			underway: false,
 			onEnd: function() {
-				document.body.appendChild(vfb.getDomNode());
+				document.body.removeChild(vfb.getDomNode());
 			}
 		});
 		wink.fx.apply(vfb.getDomNode(), {
