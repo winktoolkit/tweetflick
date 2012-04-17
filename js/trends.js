@@ -23,11 +23,11 @@ tf.trends = (function() {
 	 * 
 	 */
 	trends.init = function() {
-		wink.fx.apply($('bird_trends'), {
+		wink.fx.apply(wink.byId('bird_trends'), {
 			"transition-duration": '1ms'
 		});
 		
-		wink.fx.onTransitionEnd($('bird_trends'), trends.updatePosition, true);
+		wink.fx.onTransitionEnd(wink.byId('bird_trends'), trends.updatePosition, true);
 	};
 	
 	/**
@@ -146,7 +146,7 @@ tf.trends = (function() {
 	trends.moveBird = function()
 	{
 		clearTimeout(_birdTimer);
-		$('bird_trends').translate(_position, 20);
+		wink.fx.translate(wink.byId('bird_trends'), _position, 20);
 	};
 	
 	/**

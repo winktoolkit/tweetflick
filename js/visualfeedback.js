@@ -159,7 +159,7 @@ tf.VisualFeedback = (function() {
 			var _this = this,
 				dn = _this._domNode = document.createElement('canvas');
 			
-			dn.translate(0, 0);
+			wink.fx.translate(dn, 0, 0);
 			
 			_this._ctx = dn.getContext('2d');
 			

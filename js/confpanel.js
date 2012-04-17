@@ -38,28 +38,28 @@ tf.confpanel = (function() {
 		
 		_togglePos = _saveTogglePos();
 		_toggleBtn = new wink.ui.xy.ToggleButton({ cssClass:"onoff1", position: _togglePos });
-		$('cfp_tagcloud_toggle').appendChild(_toggleBtn.getDomNode());
+		wink.byId('cfp_tagcloud_toggle').appendChild(_toggleBtn.getDomNode());
 		wink.subscribe('/togglebutton/events/switch', { context: _togglectx, method: '_onSwitch' });
 		wink.subscribe('/colorpicker/events/close', { context: _cpctx, method: '_onColorPickerClose' });
 		
 		_resetConfValues();
 
-		_panel = $('conf_panel');
-		_city1 = $('city_1');
-		_city2 = $('city_2');
-		_city3 = $('city_3');
+		_panel = wink.byId('conf_panel');
+		_city1 = wink.byId('city_1');
+		_city2 = wink.byId('city_2');
+		_city3 = wink.byId('city_3');
 		
 		_panel.style.opacity = 0;
 		wink.fx.applyTransition(_panel, 'opacity', '500ms', '1ms', 'default');
 		
-		$('reset_btn').addEventListener('click', function() {
+		wink.byId('reset_btn').addEventListener('click', function() {
 			_resetToDefaults();
 		}, false);
-		$('cfp_save_btn').addEventListener('click', function() {
+		wink.byId('cfp_save_btn').addEventListener('click', function() {
 			_save();
 			confpanel.hide();
 		}, false);
-		$('cfp_cancel_btn').addEventListener('click', function() {
+		wink.byId('cfp_cancel_btn').addEventListener('click', function() {
 			_resetConf();
 			_resetConfValues();
 			confpanel.hide();
@@ -148,7 +148,7 @@ tf.confpanel = (function() {
 	 * 
 	 */
 	var _initColors = function() {
-		var cfp_colors_group = $('cfp_colors_group');
+		var cfp_colors_group = wink.byId('cfp_colors_group');
 		
 		var i, colors = tf.conf.colors, l = colors.length;
 		for (i = 0; i < l; i++) {
@@ -311,7 +311,7 @@ tf.confpanel = (function() {
 			
 			tf.updates.setColor(c3);
 			
-			var nodes = $('cfp_cities').getElementsByTagName('select');
+			var nodes = wink.byId('cfp_cities').getElementsByTagName('select');
 			var i, l = nodes.length;
 			for (i = 0; i < l; i++) {
 				bgcolor(nodes[i], c3);
@@ -321,7 +321,7 @@ tf.confpanel = (function() {
 		tf.main.setTagCloudsColor(rgb2, rgb3, c1, c3);
 		
 		for (var i = 0; i < 3; i++) {
-			var cfpc = $('cfp_color_' + (i + 1));
+			var cfpc = wink.byId('cfp_color_' + (i + 1));
 			if (!cfpc) {
 				break;
 			}
