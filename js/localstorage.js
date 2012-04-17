@@ -11,7 +11,7 @@
  */
 tf.localStorage = (function() {
 
-var wls = window.localStorage
+var wls = window.localStorage,
 	supported = wls ? true : false,
 	_set = {};	
 
