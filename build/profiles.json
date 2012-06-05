@@ -7,7 +7,7 @@
 	},
 	"profiles": [
 		{
-			"name": "wink-1.4.0",
+			"name": "wink-1.4.2",
 			"modules": [
 				"core", "winkcomponents"
 			],

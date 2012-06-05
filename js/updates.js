@@ -31,9 +31,9 @@ tf.updates = (function() {
 	 */
 	updates.init = function() {
 		_daemonInterval = tf.conf.refreshInterval;
-		_updateBtn = $('get_updates_btn');
-		_flickrContent = $('flickr_content');
-		_twitterContent = $('twitter_content');
+		_updateBtn = wink.byId('get_updates_btn');
+		_flickrContent = wink.byId('flickr_content');
+		_twitterContent = wink.byId('twitter_content');
 		
 		var scrollbars = {
 			backgroundColor: 'rgba(0, 98, 220, 0.6)',
@@ -70,7 +70,7 @@ tf.updates = (function() {
 		if (_currentSearch != search) {
 			_clearResults();
 			_currentSearch = search;
-			$('updates_trend').innerHTML = search;
+			wink.byId('updates_trend').innerHTML = search;
 		}
 	};
 	
@@ -190,7 +190,7 @@ tf.updates = (function() {
 		_currentFb = _getVisualFeedback(uxEvent.x, uxEvent.y);
 		document.body.appendChild(_currentFb.obj.getDomNode());
 		_currentFb.obj.show();
-		_currentFb.obj.getDomNode().translate(_currentFb.x - (_size / 2), _currentFb.y - (_size / 2));
+		wink.fx.translate(_currentFb.obj.getDomNode(), _currentFb.x - (_size / 2), _currentFb.y - (_size / 2));
 		
 		_track = true;
 		_daemon = setInterval(_onLoadMore, _daemonInterval);

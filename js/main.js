@@ -71,8 +71,8 @@ tf.main = (function() {
 		wink.error.logLevel = (tf.conf.warnings ? 1 : 0);
 		_headNode = document.getElementsByTagName('head')[0];
 		
-		_hidden_tags = $('hidden_tags');
-		_trendsline = $('trends_line1');
+		_hidden_tags = wink.byId('hidden_tags');
+		_trendsline = wink.byId('trends_line1');
 		
 		tf.splash.init();
 		_initPanels();
@@ -168,8 +168,8 @@ tf.main = (function() {
 		}
 		tf.main.track("navigation", "enter");
 		
-		var splashnode = $('splash'),
-			mainnode = $('main');
+		var splashnode = wink.byId('splash'),
+			mainnode = wink.byId('main');
 		
 		wink.fx.applyTransition(splashnode, "opacity", "1000ms", "1ms", "default");
 		wink.fx.onTransitionEnd(splashnode, function() {
@@ -273,10 +273,10 @@ tf.main = (function() {
 	var _initListeners = function() {
 		wink.subscribe('/tagcloud/events/selection', { context: main, method: 'trendSelected' });
 		
-		$('back_btn').addEventListener('click', wink.bind(main.backToTrends, this), false);
-		$('enter_btn').addEventListener('click', wink.bind(main.enter, this), false);
+		wink.byId('back_btn').addEventListener('click', wink.bind(main.backToTrends, this), false);
+		wink.byId('enter_btn').addEventListener('click', wink.bind(main.enter, this), false);
 		
-		$('conf_btn').addEventListener('click', function() {
+		wink.byId('conf_btn').addEventListener('click', function() {
 			tf.confpanel.show();
 		}, false);
 		
@@ -288,7 +288,7 @@ tf.main = (function() {
 	 */
 	var _orientHandler = {
 		change: function() {
-			var landscapeView = $('landscape_view');
+			var landscapeView = wink.byId('landscape_view');
 			if (wink.ux.window.orientation == "horizontal") {
 				wink.removeClass(landscapeView, "hidden");
 			} else {
@@ -311,7 +311,7 @@ tf.main = (function() {
 	  		'transitionType': 'default',
 	  		'pages': _views
 	  	});
-	  	$('main').appendChild(_slidingPanels.getDomNode());
+	  	wink.byId('main').appendChild(_slidingPanels.getDomNode());
 	};
 	
 	/**
@@ -335,9 +335,9 @@ tf.main = (function() {
 	        		return (angleDeg - 90);
 	        	},
 	        	idx = (i + 1),
-				geoc = $('geo_' + idx),
-				timec = $('time_' + idx),
-				container = $('tag_c_' + idx),
+				geoc = wink.byId('geo_' + idx),
+				timec = wink.byId('time_' + idx),
+				container = wink.byId('tag_c_' + idx),
 				coffx = container.offsetWidth / 2,
 				coffy = container.offsetHeight / 2,
 				radius = container.offsetHeight / 2 + 4,
@@ -350,11 +350,11 @@ tf.main = (function() {
 				gx = gcx + (radius * Math.cos(_degToRad(_asDeg(315)))),
 				gy = gcy + (radius * Math.sin(_degToRad(_asDeg(315))));
 	        	
-	        timec.translate(tx, ty);
-			timec.rotate(45);
+	        wink.fx.translate(timec, tx, ty);
+	        wink.fx.rotate(timec, 45);
 			
-			geoc.translate(gx, gy);
-			geoc.rotate(-45);
+	        wink.fx.translate(geoc, gx, gy);
+	        wink.fx.rotate(geoc, -45);
 		}
 		
 		var _refreshint = 1000;
@@ -376,7 +376,7 @@ tf.main = (function() {
 		_geotimes[index] = geoinfo.time;
 		_cities[index] = city;
 		
-		var tagCloudContainer = $('tag_c_' + (index + 1));
+		var tagCloudContainer = wink.byId('tag_c_' + (index + 1));
 		
 		if (_tagClouds[index]) {
 			_tagClouds[index].clean();
@@ -400,7 +400,7 @@ tf.main = (function() {
 			_h = (size - 10) + "px",
 			_w = (size - 10) + "px";
 			
-		wink.fx.apply($('conf_c'), {
+		wink.fx.apply(wink.byId('conf_c'), {
 			height: "310px",
 			width: "310px"
 		});
@@ -457,8 +457,8 @@ tf.main = (function() {
 			return;
 		}
 		var idx = (index + 1),
-			geoc = $('geo_' + idx),
-			timec = $('time_' + idx),
+			geoc = wink.byId('geo_' + idx),
+			timec = wink.byId('time_' + idx),
 			d = _geotimes[index];
 		
 		geoc.innerHTML = _cities[index];
@@ -494,7 +494,7 @@ tf.main = (function() {
 	 * 
 	 */
 	var _setClipArea = function(index, bgcolor, linecolor) {
-		var tagCloudContainer = $('tag_c_' + (index + 1));
+		var tagCloudContainer = wink.byId('tag_c_' + (index + 1));
 		if (_clipAreas[index]) {
 			tagCloudContainer.removeChild(_clipAreas[index]);
 		}

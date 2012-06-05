@@ -36,24 +36,24 @@ tf.splash = (function() {
 			refreshRate: 60
 		});
 		var node = _sp.getDomNode();
-		$('splash_spin').appendChild(node);
+		wink.byId('splash_spin').appendChild(node);
 		
-		wink.fx.apply($('bird_splash'), {
+		wink.fx.apply(wink.byId('bird_splash'), {
 			"transition-duration": '1ms'
 		});
 		
-		wink.fx.onTransitionEnd($('bird_splash'), splash.updatePosition, true);
+		wink.fx.onTransitionEnd(wink.byId('bird_splash'), splash.updatePosition, true);
 		
 		for ( var i=1; i<7; i++ )
 		{
-			wink.fx.apply($('splash_bar_' + i), {
+			wink.fx.apply(wink.byId('splash_bar_' + i), {
 				"transition-duration": splash.getRandomNumber(800, 2000) + 'ms',
 				"transition-timing-function": "ease-in-out"
 			});
 			
-			wink.fx.onTransitionEnd($('splash_bar_' + i), splash.updateBar);
+			wink.fx.onTransitionEnd(wink.byId('splash_bar_' + i), splash.updateBar);
 			
-			$('splash_bar_' + i).translate(0, splash.getRandomNumber(-250, -40));
+			wink.fx.translate(wink.byId('splash_bar_' + i), 0, splash.getRandomNumber(-250, -40));
 		}
 	};
 	
@@ -65,8 +65,8 @@ tf.splash = (function() {
 		
 		_sp.toggle();
 		
-		var spin = $('splash_spin'),
-			entertext = $('enter_text');
+		var spin = wink.byId('splash_spin'),
+			entertext = wink.byId('enter_text');
 		
 		wink.fx.applyTransition(spin, "opacity", "1000ms", "1ms", "default");
 		wink.fx.onTransitionEnd(spin, function() {
@@ -113,7 +113,7 @@ tf.splash = (function() {
 	splash.moveBird = function()
 	{
 		clearTimeout(_birdTimer);
-		$('bird_splash').translate(_position, 0);
+		wink.fx.translate(wink.byId('bird_splash'), _position, 0);
 	};
 	
 	/**
@@ -121,7 +121,7 @@ tf.splash = (function() {
 	 */
 	splash.updateBar = function(event)
 	{
-		$(event.target.id).translate(0, splash.getRandomNumber(-50, 0));
+		wink.fx.translate(wink.byId(event.target.id), 0, splash.getRandomNumber(-50, 0));
 	};
 	
 	/**
